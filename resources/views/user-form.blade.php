@@ -4,20 +4,22 @@
         @csrf
         <div>
             <input type="text" name="username" placeholder="Enter your name"
-                   style="margin-bottom: 12px; padding: 10px ">
+                   style="margin-bottom: 12px; padding: 10px " value="{{old('username')}}">
             @error('username') <span style="color: red">{{$message}}</span> @enderror
         </div>
         <div>
-            <input type="text" name="email" placeholder="Enter your email" style="margin-bottom: 12px; padding: 10px ">
+            <input type="text" name="email" placeholder="Enter your email"
+                   style="margin-bottom: 12px; padding: 10px " value="{{old('email')}}">
             @error('email') <span style="color: red">{{$message}}</span> @enderror
         </div>
         <div>
-            <input type="text" name="city" placeholder="Enter your city" style="margin-bottom: 12px; padding: 10px ">
+            <input type="text" name="city" placeholder="Enter your city" style="margin-bottom: 12px; padding: 10px "
+                   value="{{old('city')}}">
             @error('city') <span style="color: red">{{$message}}</span> @enderror
         </div>
         <div>
             <label for="php">PHP</label>
-            <input id="php" type="checkbox" name="skill[]" value="PHP">
+            <input id="php" type="checkbox" name="skill[]" value="PHP" >
             <label for="js">JavaScript</label>
             <input id="js" type="checkbox" name="skill[]" value="JavaScript">
             <label for="python">Python</label>

@@ -31,6 +31,16 @@ class UserController extends Controller
             'email' => 'required | email ',
             'city' => 'required | min:3 | max:20',
             'skill' => 'required',
+        ], [
+            'username.required' => 'Username is required',
+            'username.min' => 'Username must be at least 3 characters',
+            'username.max' => 'Username must be less than 20 characters',
+            'email.required' => 'Email is required',
+            'email.email' => 'Email is invalid',
+            'city.required' => 'City is required',
+            'city.min' => 'City must be at least 3 characters',
+            'city.max' => 'City must be less than 20 characters',
+            'skill.required' => 'Skill is required',
         ]);
         return $request->all();
     }
