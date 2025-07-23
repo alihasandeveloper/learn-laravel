@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-
+use App\Rules\Name;
 class UserController extends Controller
 {
     public function admin($name)
@@ -27,9 +27,9 @@ class UserController extends Controller
     public function addUser(Request $request)
     {
         $request->validate([
-            'username' => 'required | min:3 | max:20',
+            'username' => ['required', 'min:3', 'max:20', new Name],
             'email' => 'required | email ',
-            'city' => 'required | min:3 | max:20',
+            'city' => 'required | min:3 | max:20 | uppercase',
             'skill' => 'required',
         ], [
             'username.required' => 'Username is required',

@@ -31,3 +31,13 @@
         </div>
     </form>
 </div>
+
+
+@if($name)
+    <h1>{{strtoupper($name)}}</h1>
+@endif
+<a href="{{URL::to('/')}}">Welcome</a>
+<h3>Current: {{URL::current()}}</h3>
+<h3>Form: {{URL::previous()}}</h3>
+
+<p>full url {{url()->full()}}</p>
